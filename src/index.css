@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #6366f1;
+  --secondary: #8b5cf6;
+  --accent: #ec4899;
+  --background: #020617;
+  --text: #f8fafc;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500;
+}
+
+.custom-cursor {
+  pointer-events: none;
+  position: fixed;
+  mix-blend-mode: difference;
+  z-index: 9999;
+}
+
+.hero-gradient {
+  background: radial-gradient(circle at center, rgba(99, 102, 241, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.card-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.1) 0%,
+    rgba(139, 92, 246, 0.1) 50%,
+    rgba(236, 72, 153, 0.1) 100%
+  );
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timeline-line {
+  @apply absolute left-5 h-full w-0.5 bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500;
+}
+
+.timeline-dot {
+  @apply absolute left-5 w-5 h-5 rounded-full bg-indigo-500 transform -translate-x-1/2;
+}
+
+.skill-card {
+  @apply relative overflow-hidden rounded-xl p-6 glass transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20;
+}
+
+.project-card {
+  @apply relative overflow-hidden rounded-xl glass transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/20;
+}
+
+.contact-input {
+  @apply w-full bg-slate-900/50 border border-slate-800 rounded-lg p-3 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all duration-300;
+}
+
+.nav-link {
+  @apply relative px-4 py-2 text-sm font-medium transition-all duration-300 hover:text-indigo-400;
+}
+
+.nav-link.active {
+  @apply text-indigo-400;
+}
+
+.nav-link.active::after {
+  content: "";
+  @apply absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full;
+}
